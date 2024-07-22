@@ -19,8 +19,19 @@
             width: 100%;
         }
     </style> -->
+    <script async
+    data-ad-frequency-hint="30s"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789" # your publisher ID
+    crossorigin="anonymous">
+</script>
+<script>
+   window.adsbygoogle = window.adsbygoogle || [];
+   var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+</script>
 </head>
 <body>
+    <canvas id="game_canvas" width="100%" height="100%"></canvas>
+    <script src="game.js"></script>
     <h1>Hello, World!</h1>
     <!-- <div class="ad-container">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -38,6 +49,26 @@
       data-adbreak-test="on"
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789"
       crossorigin="anonymous">
+</script>
+<script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+    function init() {
+      // Game start logic, show loading screen
+      adConfig({
+        preloadAdBreaks: 'on',
+        onReady: showAd
+      });
+      // Don't start the gameplay just yet, keep loading.
+    }
+
+    function showAd() {
+      // Show an ad
+      adBreak({
+        type: 'start',
+        adBreakDone: startGame,  // always called, unblocks the game logic
+      });
+    }
 </script>
 <script>
    window.adsbygoogle = window.adsbygoogle || [];
