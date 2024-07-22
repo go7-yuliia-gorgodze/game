@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#message {
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#ad-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 5px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    background-color: #f5dbbb;
+    border: 2px solid #e88a17;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    background-color: #f4f3f4;
+    transform: scale(1.05);
+}
+
+.cell:active {
+    background-color: #f4f3f4;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.cell {
+    animation: fadeIn 0.5s;
+}
