@@ -3,76 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <!-- <meta name="google-site-verification" content="4533090025085682" /> -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://tpc.googlesyndication.com; object-src 'none';"> -->
-    <link rel="stylesheet" href="index.css">
-    <!-- <style>
-        .ad-container {
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-            text-align: center; /* Center the ad */
-        }
-        .adsbygoogle {
-            display: inline-block;
-            width: 100%;
-        }
-    </style> -->
-    <script async
-    data-ad-frequency-hint="30s"
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789" # your publisher ID
-    crossorigin="anonymous">
-</script>
-<script>
-   window.adsbygoogle = window.adsbygoogle || [];
-   var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
-</script>
+    <title>Ad Placement API HTML5 Simple Demo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="game_canvas" width="100%" height="100%"></canvas>
-    <script src="game.js"></script>
-    <h1>Hello, World!</h1>
-    <!-- <div class="ad-container">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4533090025085682"
-             data-ad-slot="YOUR_AD_SLOT_ID"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
+    <canvas id="gameCanvas" width="720" height="720"></canvas>
+    <button id="playButton" style="display:none;">Play</button>
+    <div class="gameFotter">
+        <div id="message" class="message"></div>
+        <button id="restartButton" style="display:none;">Restart</button>
+        <span class="message" id="rewardMsg"></span>
+    </div>
+    <div class="ad-container">
+        <script async
+                data-ad-client="ca-pub-8588820008944775"
+                data-admob-interstitial-slot="ca-app-pub-3940256099942544/1033173712"
+                data-admob-rewarded-slot="ca-app-pub-3940256099942544/5224354917"
+                data-ad-frequency-hint="30s"
+                data-page-url="arrowsamples.com"
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
         </script>
-    </div> -->
-    <script src="index.js"></script>
-    <script async
-      data-adbreak-test="on"
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789"
-      crossorigin="anonymous">
-</script>
-<script>
-    window.adsbygoogle = window.adsbygoogle || [];
-    var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
-    function init() {
-      // Game start logic, show loading screen
-      adConfig({
-        preloadAdBreaks: 'on',
-        onReady: showAd
-      });
-      // Don't start the gameplay just yet, keep loading.
-    }
+    </div>
 
-    function showAd() {
-      // Show an ad
-      adBreak({
-        type: 'start',
-        adBreakDone: startGame,  // always called, unblocks the game logic
-      });
-    }
-</script>
-<script>
-   window.adsbygoogle = window.adsbygoogle || [];
-   var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
-</script>
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];
+        const adBreak = adConfig = function (o) {
+            adsbygoogle.push(o);
+        }
+    </script>
+
+    <script src="game.js"></script>
 </body>
 </html>
