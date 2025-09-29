@@ -23,7 +23,6 @@ class TicTacToeGame {
         ];
 
         document.addEventListener('keydown', this.handleKeydown.bind(this));
-
         this.renderIntroScreen();
     }
 
